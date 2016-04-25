@@ -86,6 +86,7 @@ class FakeQuickbooks::Server < Sinatra::Base
   def xml_response(response_code, file_name)
     content_type :xml
     status response_code
-    File.open("lib/fixtures/#{file_name}").read
+    path = File.expand_path("../fixtures/#{file_name}", __FILE__)
+    File.open(path).read
   end
 end
