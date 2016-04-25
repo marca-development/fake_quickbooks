@@ -1,6 +1,6 @@
 # FakeQuickbooks
 
-TODO: Write a gem description
+Provides a FakeQuickbooks
 
 ## Installation
 

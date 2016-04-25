@@ -1,0 +1,12 @@
+<IntuitResponse xmlns="http://schema.intuit.com/finance/v3" time="2013-07-11T17:54:47.580-07:00"><Payment>
+  <Id>2</Id>
+  <Line>
+    <Amount>232.5</Amount>
+    <LinkedTxn>
+      <TxnId>2</TxnId>
+      <TxnType>invoice</TxnType>
+    </LinkedTxn>
+  </Line>
+  <CustomerRef>2</CustomerRef>
+  <TotalAmt>232.5</TotalAmt>
+</Payment></IntuitResponse>

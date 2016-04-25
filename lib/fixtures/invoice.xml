@@ -1,0 +1,27 @@
+<IntuitResponse xmlns="http://schema.intuit.com/finance/v3" time="2013-07-11T17:54:47.580-07:00"><Invoice>
+  <Id>2</Id>
+  <DocNumber>8</DocNumber>
+  <TxnDate>2016-04-01</TxnDate>
+  <Line>
+    <Description>Jadyn Kuvalis5279494 / 2016-04-01 / per_unit / Containers:  / Weight: 0.0</Description>
+    <Amount>232.5</Amount>
+    <DetailType>SalesItemLineDetail</DetailType>
+    <SalesItemLineDetail>
+      <ItemRef>2</ItemRef>
+      <UnitPrice>15.5</UnitPrice>
+      <Qty>15.0</Qty>
+    </SalesItemLineDetail>
+  </Line>
+  <CustomerRef>2</CustomerRef>
+  <DueDate>2016-05-01</DueDate>
+  <EmailStatus>EmailSent</EmailStatus>
+  <DeliveryInfo>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;hash&gt;
+  &lt;DeliveryType&gt;Email&lt;/DeliveryType&gt;
+  &lt;DeliveryTime&gt;2014-12-17T11:50:52-08:00&lt;/DeliveryTime&gt;
+&lt;/hash&gt;
+</DeliveryInfo>
+  <BillEmail>
+    <Address>jordan@cratebind.com</Address>
+  </BillEmail>
+</Invoice></IntuitResponse>

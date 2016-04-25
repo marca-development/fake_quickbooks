@@ -1,0 +1,28 @@
+<IntuitResponse xmlns="http://schema.intuit.com/finance/v3" time="2013-07-11T17:54:47.580-07:00"><Customer>
+  <Id>2</Id>
+  <GivenName/>
+  <FamilyName/>
+  <CompanyName>Mr. Katelin McDermott</CompanyName>
+  <DisplayName>Mr. Katelin McDermott</DisplayName>
+  <PrimaryPhone>
+    <FreeFormNumber>580-275-9034</FreeFormNumber>
+  </PrimaryPhone>
+  <PrimaryEmailAddr>
+    <Address>korey_willms@example.org</Address>
+  </PrimaryEmailAddr>
+  <BillAddr>
+    <Line1>5236 W. University Drive</Line1>
+    <City>Mesquite</City>
+    <CountrySubDivisionCode>Texas</CountrySubDivisionCode>
+    <PostalCode>75013</PostalCode>
+  </BillAddr>
+  <ShipAddr>
+    <Line1>5236 W. University Drive</Line1>
+    <City>Mesquite</City>
+    <CountrySubDivisionCode>Texas</CountrySubDivisionCode>
+    <PostalCode>75013</PostalCode>
+  </ShipAddr>
+  <Job>true</Job>
+  <ParentRef>2</ParentRef>
+  <PreferredDeliveryMethod>email</PreferredDeliveryMethod>
+</Customer></IntuitResponse>

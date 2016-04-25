@@ -1,0 +1,27 @@
+<IntuitResponse xmlns="http://schema.intuit.com/finance/v3" time="2013-07-11T17:54:47.580-07:00"><JournalEntry>
+  <Id>2</Id>
+  <Line>
+    <Description>Stripe Fees Deducted from transfer id #2</Description>
+    <Amount>25.0</Amount>
+    <DetailType>JournalEntryLineDetail</DetailType>
+    <JournalEntryLineDetail>
+      <PostingType>Credit</PostingType>
+      <Entity>
+        <EntityRef>4</EntityRef>
+      </Entity>
+      <AccountRef>5</AccountRef>
+    </JournalEntryLineDetail>
+  </Line>
+  <Line>
+    <Description>Stripe Fees Deducted from transfer id #2</Description>
+    <Amount>25.0</Amount>
+    <DetailType>JournalEntryLineDetail</DetailType>
+    <JournalEntryLineDetail>
+      <PostingType>Debit</PostingType>
+      <Entity>
+        <EntityRef>4</EntityRef>
+      </Entity>
+      <AccountRef>5</AccountRef>
+    </JournalEntryLineDetail>
+  </Line>
+</JournalEntry></IntuitResponse>

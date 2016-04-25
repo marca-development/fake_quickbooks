@@ -1,0 +1,91 @@
+require 'sinatra/base'
+require 'cgi'
+
+class FakeQuickbooks::Server < Sinatra::Base
+  
+  post '/v3/company/:realm_id/account' do
+    xml_response 200, 'account.xml'
+  end
+
+  get '/v3/company/:realm_id/account/:id' do
+    xml_response 200, 'account.xml'
+  end
+
+  post '/v3/company/:realm_id/item' do
+    xml_response 200, 'item.xml'
+  end
+
+  get '/v3/company/:realm_id/item/:id' do
+    xml_response 200, 'item.xml'
+  end
+
+  post '/v3/company/:realm_id/customer' do
+    xml_response 200, 'customer.xml'
+  end
+
+  get '/v3/company/:realm_id/customer/:id' do
+    xml_response 200, 'customer.xml'
+  end
+
+  post '/v3/company/:realm_id/invoice' do
+    xml_response 200, 'invoice.xml'
+  end
+
+  get '/v3/company/:realm_id/invoice/:id' do
+    xml_response 200, 'invoice.xml'
+  end
+
+  get '/v3/company/:realm_id/invoice/:id/pdf' do
+    # xml_response 200, 'invoice.xml'
+    send_file 'spec/support/test.pdf', :type => :pdf
+  end
+
+  post '/v3/company/:realm_id/invoice/:id/send' do
+    xml_response 200, 'invoice.xml'
+  end
+
+  post '/v3/company/:realm_id/payment' do
+    xml_response 200, 'payment.xml'
+  end
+
+  get '/v3/company/:realm_id/payment/:id' do
+    xml_response 200, 'payment.xml'
+  end
+
+  post '/v3/company/:realm_id/refundreceipt' do
+    xml_response 200, 'fetch_refund_receipt_by_id.xml'
+  end
+
+  get '/v3/company/:realm_id/payment/:id' do
+    xml_response 200, 'payment.xml'
+  end
+
+  post '/v3/company/:realm_id/journalentry' do
+    xml_response 200, 'journal_entry.xml'
+  end
+
+  get '/v3/company/:realm_id/journalentry/:id' do
+    xml_response 200, 'journal_entry.xml'
+  end
+
+  get '/v3/company/:realm_id/:query' do
+    if params["changedSince"]
+      filename = 'invoices.xml'
+    else
+    	query = CGI::parse(request.env['QUERY_STRING'])['query'].first.gsub('SELECT * FROM ','')
+      model_name = query.split.first.downcase
+      model_name = 'journal_entry' if model_name == 'transfer'
+  	  filename = "#{model_name}.xml"	
+    end
+    xml_response 200, filename
+  end
+
+
+  private
+
+  def xml_response(response_code, file_name)
+    content_type :xml
+    status response_code
+    File.open("lib/fixtures/#{file_name}").read
+  end
+end
