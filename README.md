@@ -7,7 +7,7 @@ Provides a FakeQuickbooks
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fake_quickbooks'
+gem 'fake_quickbooks', git: 'git@git.cratebind.com:cratebind/fake_quickbooks.git'
 ```
 
 And then execute:
