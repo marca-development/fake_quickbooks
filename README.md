@@ -20,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add the following to your rails_helper.rb where you have your webmock stub requests:
+
+```
+    # Quickbooks API
+    stub_request(:any, /sandbox-quickbooks.api.intuit.com/).to_rack(FakeQuickbooks::Server)
+    stub_request(:any, /.*appcenter.intuit.com.*/).to_rack(FakeQuickbooks::Server)
+```
 
 ## Contributing
 
