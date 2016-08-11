@@ -1,6 +1,8 @@
-<IntuitResponse xmlns="http://schema.intuit.com/finance/v3" time="2013-07-11T17:54:47.580-07:00"><Item>
-  <Id>2</Id>
-  <Name>Clemmie Rath PhD</Name>
-  <Type>Inventory</Type>
-  <IncomeAccountRef>15</IncomeAccountRef>
-</Item></IntuitResponse>
+<IntuitResponse xmlns="http://schema.intuit.com/finance/v3" time="2013-07-11T17:54:47.580-07:00">
+    <Item>
+        <Id>2</Id>
+        <Name>Clemmie Rath PhD</Name>
+        <Type>Inventory</Type>
+        <IncomeAccountRef>15</IncomeAccountRef>
+    </Item>
+</IntuitResponse>

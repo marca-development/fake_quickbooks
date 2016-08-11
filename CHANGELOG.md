@@ -3,3 +3,6 @@
 
 ## Release 1.1.0
 - Added paid invoice option
+
+## Release 1.1.1
+- Bugfix on response of invoice
