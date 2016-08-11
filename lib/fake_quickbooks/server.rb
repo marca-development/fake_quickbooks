@@ -3,6 +3,10 @@ require 'cgi'
 
 class FakeQuickbooks::Server < Sinatra::Base
   
+  get '/api/v1/connection/reconnect' do
+    xml_response 200, 'access_token_200.xml'
+  end
+
   post '/v3/company/:realm_id/account' do
     xml_response 200, 'account.xml'
   end
