@@ -36,7 +36,11 @@ class FakeQuickbooks::Server < Sinatra::Base
   end
 
   get '/v3/company/:realm_id/invoice/:id' do
-    xml_response 200, 'invoice.xml'
+    if params[:id] == 'paid'
+      xml_response 200, 'invoice_paid.xml'
+    else
+      xml_response 200, 'invoice.xml'
+    end
   end
 
   get '/v3/company/:realm_id/invoice/:id/pdf' do

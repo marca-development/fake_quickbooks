@@ -79,7 +79,7 @@
   <ApplyTaxAfterDiscount>false</ApplyTaxAfterDiscount>
   <PrintStatus>NotSet</PrintStatus>
   <EmailStatus>NotSet</EmailStatus>
-  <Balance>50.00</Balance>
+  <Balance>0.00</Balance>
   <Deposit>0</Deposit>
   <AllowIPNPayment>true</AllowIPNPayment>
   <AllowOnlinePayment>false</AllowOnlinePayment>

@@ -28,6 +28,10 @@ Add the following to your rails_helper.rb where you have your webmock stub reque
     stub_request(:any, /.*appcenter.intuit.com.*/).to_rack(FakeQuickbooks::Server)
 ```
 
+# Invoices
+
+To get a paid invoice response, set the id to 'paid'
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/fake_quickbooks/fork )
