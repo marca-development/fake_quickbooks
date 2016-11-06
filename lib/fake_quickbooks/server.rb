@@ -96,6 +96,14 @@ class FakeQuickbooks::Server < Sinatra::Base
     xml_response 200, 'vendor.xml'
   end
 
+  post '/v3/company/:realm_id/bill' do
+    xml_response 200, 'bill.xml'
+  end
+
+  get '/v3/company/:realm_id/bill/:id' do
+    xml_response 200, 'bill.xml'
+  end
+
   private
 
   def xml_response(response_code, file_name)
