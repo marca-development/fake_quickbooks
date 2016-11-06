@@ -88,6 +88,13 @@ class FakeQuickbooks::Server < Sinatra::Base
     xml_response 200, filename
   end
 
+  post '/v3/company/:realm_id/vendor' do
+    xml_response 200, 'vendor.xml'
+  end
+
+  get '/v3/company/:realm_id/vendor/:id' do
+    xml_response 200, 'vendor.xml'
+  end
 
   private
 
