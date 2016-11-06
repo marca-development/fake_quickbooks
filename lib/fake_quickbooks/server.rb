@@ -97,11 +97,11 @@ class FakeQuickbooks::Server < Sinatra::Base
   end
 
   post '/v3/company/:realm_id/bill' do
-    xml_response 200, 'bill.xml'
+    xml_response 200, 'bill_create_response.xml'
   end
 
   get '/v3/company/:realm_id/bill/:id' do
-    xml_response 200, 'bill.xml'
+    xml_response 200, 'bill_create_response.xml'
   end
 
   private
