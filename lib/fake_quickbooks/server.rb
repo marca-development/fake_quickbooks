@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'cgi'
 
 class FakeQuickbooks::Server < Sinatra::Base
-  
+
   get '/api/v1/connection/reconnect' do
     xml_response 200, 'access_token_200.xml'
   end
@@ -83,7 +83,7 @@ class FakeQuickbooks::Server < Sinatra::Base
     	query = CGI::parse(request.env['QUERY_STRING'])['query'].first.gsub('SELECT * FROM ','')
       model_name = query.split.first.downcase
       model_name = 'journal_entry' if model_name == 'transfer'
-  	  filename = "#{model_name}.xml"	
+  	  filename = "#{model_name}.xml"
     end
     xml_response 200, filename
   end
@@ -102,6 +102,10 @@ class FakeQuickbooks::Server < Sinatra::Base
 
   get '/v3/company/:realm_id/bill/:id' do
     xml_response 200, 'bill_create_response.xml'
+  end
+
+  get '/v3/company/:realm_id/term' do
+    xml_response 200, 'terms.xml'
   end
 
   private
