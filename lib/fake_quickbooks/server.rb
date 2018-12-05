@@ -83,6 +83,7 @@ class FakeQuickbooks::Server < Sinatra::Base
     	query = CGI::parse(request.env['QUERY_STRING'])['query'].first.gsub('SELECT * FROM ','')
       model_name = query.split.first.downcase
       model_name = 'journal_entry' if model_name == 'transfer'
+      model_name = 'terms' if model_name == 'term'
   	  filename = "#{model_name}.xml"
     end
     xml_response 200, filename
@@ -105,7 +106,7 @@ class FakeQuickbooks::Server < Sinatra::Base
   end
 
   get '/v3/company/:realm_id/term' do
-    xml_response 200, 'terms.xml'
+    xml_response 200, 'term.xml'
   end
 
   private
