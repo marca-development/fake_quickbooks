@@ -80,10 +80,13 @@ class FakeQuickbooks::Server < Sinatra::Base
     if params["changedSince"]
       filename = 'invoices.xml'
     else
-    	query = CGI::parse(request.env['QUERY_STRING'])['query'].first.gsub('SELECT * FROM ','')
+    	query = CGI::parse(request.env['QUERY_STRING'])['query'].first
+      query.gsub!('SELECT * FROM ','')
+      query.gsub!('select * from','')
       model_name = query.split.first.downcase
       model_name = 'journal_entry' if model_name == 'transfer'
-      model_name = 'terms' if model_name == 'term'
+      # This method is also used for the find_by method
+      model_name = 'terms' if model_name == 'term' && !query.include?("Id =")
   	  filename = "#{model_name}.xml"
     end
     xml_response 200, filename
@@ -106,6 +109,10 @@ class FakeQuickbooks::Server < Sinatra::Base
   end
 
   get '/v3/company/:realm_id/term' do
+    xml_response 200, 'term.xml'
+  end
+
+  get '/v3/company/:realm_id/term/:id' do
     xml_response 200, 'term.xml'
   end
 
