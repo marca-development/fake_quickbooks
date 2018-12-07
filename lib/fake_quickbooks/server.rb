@@ -105,7 +105,11 @@ class FakeQuickbooks::Server < Sinatra::Base
   end
 
   get '/v3/company/:realm_id/bill/:id' do
-    xml_response 200, 'bill_create_response.xml'
+    if params[:id] == 1999 || params[:id] == "1999"
+      xml_response 400, 'not_found.xml'
+    else
+      xml_response 200, 'bill_create_response.xml'
+    end
   end
 
   get '/v3/company/:realm_id/term' do

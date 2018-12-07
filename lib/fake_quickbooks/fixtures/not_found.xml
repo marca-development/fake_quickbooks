@@ -1,0 +1,8 @@
+<IntuitResponse xmlns="http://schema.intuit.com/finance/v3" time="2018-12-07T11:54:03.505-08:00">
+  <Fault type="ValidationFault">
+    <Error code="610" element="">
+      <Message>Object Not Found</Message>
+      <Detail>Object Not Found : Something you're trying to use has been made inactive. Check the fields with accounts, customers, items, vendors or employees.</Detail>
+    </Error>
+  </Fault>
+</IntuitResponse>
