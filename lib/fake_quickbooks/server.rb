@@ -117,7 +117,15 @@ class FakeQuickbooks::Server < Sinatra::Base
   end
 
   get '/v3/company/:realm_id/term/:id' do
-    xml_response 200, 'term.xml'
+    if params[:id] == 1999 || params[:id] == "1999"
+      xml_response 400, 'not_found.xml'
+    else
+      xml_response 200, 'term.xml'
+    end
+  end
+
+  get '/v3/company/:realm_id/reports/:report_type' do
+    xml_response 200, 'balancesheet.xml'
   end
 
   private
